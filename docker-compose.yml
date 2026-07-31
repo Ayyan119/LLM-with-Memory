@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_default
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5442:5432"
+
+  postgres_langgraph_memory:
+    image: pgvector/pgvector:pg16
+    container_name: postgres_langgraph_memory
+    environment:
+      POSTGRES_USER: Ayyan
+      POSTGRES_PASSWORD: "12345678"
+      POSTGRES_DB: model_memory
+    ports:
+      - "5443:5432"
